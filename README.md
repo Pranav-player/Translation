@@ -7,7 +7,7 @@ A SwiftUI-based iOS app that allows users to translate text. Users can input tex
 - Translate captured text with a single button press.
 - Keeps history of translations.
 ## Screenshots
-![Translate Screen](screenshots/TranslateView.jpeg)
+![Translate Screen](Assets.xcassets/TranslateView.jpeg)
 ## Installation
 1. Clone the repository:
    ```bash
