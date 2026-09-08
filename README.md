@@ -16,10 +16,39 @@ Real-time text translation iOS application supporting 34 languages with on-devic
 Your app is **optimized for production**:
 
 - **Latency**: 933µs average operation latency
-- **Memory**: 56 MB peak memory footprint  
+- **Memory**: 56 MB peak memory footprint
 - **CPU**: <5% CPU usage at idle
 - **Concurrency**: 10,225+ operations handled efficiently
 - **Threading**: Robust concurrent architecture with minimal blocking
+
+## 🏗️ System Architecture
+
+### Component Diagram
+Shows how the app's main components interact:
+- **Translation UI** ↔ **Translation Manager**
+- **Camera UI** ↔ **Camera & OCR** (Vision Framework)
+- **History UI** ↔ **History Manager**
+- **Translation Manager** ↔ **Translation API**
+
+![Component Diagram](Diagrams/Translation%20App%20-%20Component%20Diagram.png)
+
+### Package Diagram
+Logical organization of modules:
+- **Application Layer**: Main app entry point
+- **Presentation Layer**: SwiftUI views and view models
+- **Translation Module**: Core translation logic
+- **Camera Module**: Vision framework integration
+- **History Module**: Data persistence and management
+
+![Package Diagram](Diagrams/PackageDiagram%20-%20TRANSLATION%20APP.png)
+
+### Deployment Diagram
+Shows runtime environment:
+- **iPhone Device** (iOS 15+)
+- **Translation API Server** (External REST API)
+- **Communication**: HTTPS/REST protocol
+
+![Deployment Diagram](Diagrams/Translation%20App%20-%20Deployment%20Diagram.png)
 
 ## 🛠️ Tech Stack
 
@@ -119,7 +148,7 @@ MIT License - feel free to use and modify
 
 ## 👤 Author
 
-**Pranav Bhatia**  
+**Pranav Bhatia**
 - [GitHub](https://github.com/Pranav-player)
 - [LinkedIn](https://www.linkedin.com/in/pranav-bhatia-574206327/)
 - [LeetCode](https://leetcode.com/u/pranav-playe/)
