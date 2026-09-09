@@ -1,6 +1,6 @@
 # Translation App - iOS
 
-Real-time text translation iOS application supporting 34 languages with on-device OCR using Apple's Vision framework.
+Real-time text translation iOS application supporting 34+ languages with on-device OCR using Apple's Vision framework.
 
 ## ✨ Features
 
@@ -13,7 +13,7 @@ Real-time text translation iOS application supporting 34 languages with on-devic
 
 ## 📊 Performance Metrics
 
-Your app is **optimized for production**:
+The app is optimized for efficient real-time operation:
 
 - **Latency**: 933µs average operation latency
 - **Memory**: 56 MB peak memory footprint
@@ -24,7 +24,9 @@ Your app is **optimized for production**:
 ## 🏗️ System Architecture
 
 ### Component Diagram
-Shows how the app's main components interact:
+
+Shows how the app's major components interact:
+
 - **Translation UI** ↔ **Translation Manager**
 - **Camera UI** ↔ **Camera & OCR** (Vision Framework)
 - **History UI** ↔ **History Manager**
@@ -33,7 +35,9 @@ Shows how the app's main components interact:
 ![Component Diagram](Diagrams/Translation%20App%20-%20Component%20Diagram.png)
 
 ### Package Diagram
-Logical organization of modules:
+
+Shows the logical organization of the application's modules:
+
 - **Application Layer**: Main app entry point
 - **Presentation Layer**: SwiftUI views and view models
 - **Translation Module**: Core translation logic
@@ -43,12 +47,68 @@ Logical organization of modules:
 ![Package Diagram](Diagrams/PackageDiagram%20-%20TRANSLATION%20APP.png)
 
 ### Deployment Diagram
-Shows runtime environment:
-- **iPhone Device** (iOS 15+)
-- **Translation API Server** (External REST API)
+
+Shows the runtime environment and external communication:
+
+- **iPhone Device**: iOS 15+
+- **Translation API Server**: External REST API
 - **Communication**: HTTPS/REST protocol
 
 ![Deployment Diagram](Diagrams/Translation%20App%20-%20Deployment%20Diagram.png)
+
+## 📐 UML Design
+
+### Use Case Diagram
+
+Describes the primary interactions between the user and the Translation App, including:
+
+- Select input method
+- Enter text manually
+- Capture text using the camera
+- Select source and target languages
+- Translate text
+- View translation history
+- Manage saved translations
+
+![Use Case Diagram](Diagrams/Translation%20App%20-%20Use%20Case%20Diagram.png)
+
+### Class Diagram
+
+Shows the main classes and their relationships within the application, including the UI, translation management, OCR processing, API integration, and history management components.
+
+![Class Diagram](Diagrams/Translation%20App%20-%20Class%20Diagram.png)
+
+### Activity Diagram
+
+Shows the end-to-end workflow of a translation request:
+
+1. User selects an input method
+2. User chooses camera or manual text input
+3. Camera input is processed using OCR, while manual input is entered directly
+4. User selects the source and target languages
+5. Translation API is called
+6. Translated result is displayed
+7. Translation is saved to history
+
+![Activity Diagram](Diagrams/Translation%20App%20-%20Activity%20Diagram.png)
+
+### Sequence Diagram
+
+Shows the sequence of interactions during a translation request between the user interface, translation manager, OCR processor, translation API, and history manager.
+
+The sequence includes:
+
+1. User selects an input method
+2. User provides input
+3. Translation UI requests translation
+4. Camera input is processed through OCR when applicable
+5. Extracted text is returned to the translation manager
+6. Translation API processes the text
+7. Translated text is returned
+8. Translation is saved to history
+9. Result is displayed to the user
+
+![Sequence Diagram](Diagrams/Translation%20App%20-%20Sequence%20Diagram.png)
 
 ## 🛠️ Tech Stack
 
@@ -57,6 +117,7 @@ Shows runtime environment:
 - **Media**: AVFoundation
 - **Architecture**: MVVM with concurrent programming
 - **API Integration**: RESTful translation service
+- **Language**: Swift
 
 ## 📱 Screenshots
 
@@ -76,83 +137,3 @@ Shows runtime environment:
 git clone https://github.com/Pranav-player/Translation.git
 cd Translation
 open Translation.xcodeproj
-```
-
-### Running
-
-1. Select target device (simulator or physical iPhone)
-2. Press `Cmd + R` to build and run
-3. Grant camera permissions when prompted
-4. Start translating!
-
-## 🏗️ Architecture
-
-### Concurrent Design
-- Handles 10,225+ concurrent operations
-- GCD-based thread management for optimal performance
-- Minimal blocking operations for responsive UI
-- Efficient memory management (56 MB peak)
-
-### API Integration
-- Structured data handling for reliable information retrieval
-- Efficient caching mechanism
-- Smart request batching to reduce latency
-
-## 📈 Performance Optimization Highlights
-
-- **Sub-millisecond execution**: 933µs average latency per operation
-- **Memory efficient**: Only 56 MB peak memory despite handling 10,000+ operations
-- **Low power consumption**: <5% CPU usage maintains device battery life
-- **Responsive UI**: Concurrent architecture ensures smooth user experience
-- **Smart caching**: Local storage reduces API calls and improves response times
-
-## 📚 Usage
-
-1. **Manual Translation**:
-   - Enter text in the input field
-   - Select source and target languages
-   - Tap "Translate"
-
-2. **Camera-Based Translation**:
-   - Tap camera icon
-   - Point camera at text
-   - Vision framework captures and recognizes text automatically
-   - Tap "Translate" for instant translation
-
-3. **View History**:
-   - Access your translation history
-   - Search past translations
-   - Clear history when needed
-
-## 🎯 Future Enhancements
-
-- [ ] Offline translation support using on-device models
-- [ ] Voice input and output
-- [ ] Share translations via messaging apps
-- [ ] Support for multiple translation APIs
-- [ ] Dark mode UI
-- [ ] Favorites/bookmarks for frequent translations
-
-## 💡 Technical Insights
-
-This app demonstrates:
-- Apple's modern frameworks (SwiftUI, Vision, AVFoundation)
-- Concurrent programming best practices
-- Performance optimization techniques
-- Efficient API integration patterns
-- Professional iOS app architecture
-
-## 📄 License
-
-MIT License - feel free to use and modify
-
-## 👤 Author
-
-**Pranav Bhatia**
-- [GitHub](https://github.com/Pranav-player)
-- [LinkedIn](https://www.linkedin.com/in/pranav-bhatia-574206327/)
-- [LeetCode](https://leetcode.com/u/pranav-playe/)
-
-## 📞 Questions?
-
-Feel free to open an issue or reach out via LinkedIn!
